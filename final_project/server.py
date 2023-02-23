@@ -3,18 +3,19 @@ from flask import Flask, render_template, request
 import json
 
 app = Flask("Web Translator")
+translator = WatsonTranslator()
 
 @app.route("/englishToFrench")
 def englishToFrench():
     textToTranslate = request.args.get('textToTranslate')
     # Write your code here
-    return "Translated text to French"
-
+    translated_to_french = translator.englishToFrench(textToTranslate)
+    return translated_to_french
 @app.route("/frenchToEnglish")
 def frenchToEnglish():
     textToTranslate = request.args.get('textToTranslate')
-    # Write your code here
-    return "Translated text to English"
+    translated_to_english = translator.englishToFrench(textToTranslate)
+    return translated_to_english
 
 @app.route("/")
 def renderIndexPage():
