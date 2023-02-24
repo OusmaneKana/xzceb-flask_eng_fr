@@ -9,13 +9,13 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 class WatsonTranslator():
     def __init__(self):
-        authenticator = IAMAuthenticator('1fMUSo7m19tAXb9uXJ011nAHeawx3OslXXna0CQC7cVc')
+        authenticator = IAMAuthenticator('{key}')
         self.language_translator = LanguageTranslatorV3(
             version='2021-05-01',
             authenticator=authenticator
         )
 
-        self.language_translator.set_service_url('https://api.au-syd.language-translator.watson.cloud.ibm.com/instances/add117af-6f59-437c-9ad9-da04c9c35edc')
+        self.language_translator.set_service_url('{url}}')
 
 
     def english_to_french(self, english_text):
